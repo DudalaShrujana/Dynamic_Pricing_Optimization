@@ -31,8 +31,11 @@ VS Code
 Git
 GitHub
 
-Project Structure
 
+
+# Project Structure
+
+```bash
 Dynamic_Pricing/
 │
 ├── data/
@@ -54,7 +57,7 @@ Dynamic_Pricing/
 ├── .gitignore
 │
 └── venv/
- 
+```
  Dataset Information
 
 Dataset contains:
@@ -135,7 +138,7 @@ The project compares multiple regression algorithms.
 | Ridge Regression  | Reduces overfitting         |
 | Random Forest     | Ensemble learning           |
 | XGBoost           | Advanced boosting algorithm |
-|_________________________________________________|
+
 
 Measures average prediction error.
 
