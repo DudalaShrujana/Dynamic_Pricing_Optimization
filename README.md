@@ -1,8 +1,8 @@
-Dynamic Pricing Optimization
+# Dynamic Pricing Optimization
 
 A Machine Learning project that analyzes retail pricing, customer demand, competitor pricing, and revenue trends to build an intelligent dynamic pricing system.
 
-Project Overview
+# Project Overview
 
 This project focuses on:
 
@@ -15,7 +15,7 @@ Model comparison using regression metrics
 
 The system helps businesses make data-driven pricing decisions.
 
-Technologies Used
+# Technologies Used
 Programming Language
 Python
 Libraries
@@ -79,7 +79,8 @@ Important features:
 | customers   | Customer count          |
 | holiday     | Holiday indicator       |
 
-Workflow
+# Workflow
+
 1. Data Loading
 
 Dataset is loaded using Pandas.
@@ -94,7 +95,7 @@ Date conversion
 Missing value handling
 Feature engineering
 
-Output:
+# Output:
 
 Shape : (50000, 30)
 Duplicate rows: 0
@@ -102,15 +103,15 @@ Exploratory Data Analysis (EDA)
 
 EDA helps understand pricing behavior, demand patterns, and relationships between variables.
 
-Distribution of Unit Price
+## Distribution of Unit Price
 Most products are in low-to-medium price ranges
 Few expensive products create a long-tail distribution
 
-Distribution of Total Price
+## Distribution of Total Price
 Most transactions are low-value purchases
 Few transactions contribute very high revenue
 
-Distribution of Quantity Sold
+## Distribution of Quantity Sold
 Small quantities are sold more frequently
 High quantity purchases are less common
 
@@ -122,13 +123,13 @@ Correlation Heatmap
 
 Shows relationships between numerical features.
 
-Key insights:
+## Key insights:
 
 Revenue strongly correlates with quantity
 Competitor prices affect product pricing
 Lag prices influence future pricing
 
-Machine Learning Models Used
+# Machine Learning Models Used
 
 The project compares multiple regression algorithms.
 
@@ -139,16 +140,17 @@ The project compares multiple regression algorithms.
 | Random Forest     | Ensemble learning           |
 | XGBoost           | Advanced boosting algorithm |
 
+## Evaluation Metrics
 
-Measures average prediction error.
+# Measures average prediction error.
 
 Formula:
 
-MAE = Average(|Actual - Predicted|)
+ MAE = Average(|Actual - Predicted|)
 
 Lower MAE = Better model
 
-RMSE (Root Mean Squared Error)
+## RMSE (Root Mean Squared Error)
 
 Penalizes large prediction errors more heavily.
 
@@ -158,7 +160,7 @@ RMSE = sqrt(mean((Actual - Predicted)^2))
 
 Lower RMSE = Better model
 
-R² Score
+## R² Score
 
 Measures how well the model explains the data.
 
@@ -169,7 +171,8 @@ Range:
 
 Higher R² = Better model
 
-Model Comparison Output
+## Model Comparison Output
+
 Model comparison (Price prediction):
 
 Model                  MAE         RMSE        R2
@@ -178,10 +181,12 @@ Ridge Regression       0.0043      0.0065      1.0000
 Random Forest          0.2714      0.7287      0.9998
 XGBoost                0.7258      1.0825      0.9996
 
-Best model selected:
+## Best model selected:
 
 Best price model: Linear Regression
-Key Insights
+
+## Key Insights
+
 Revenue depends strongly on:
 Product pricing
 Quantity sold
@@ -189,8 +194,8 @@ Competitor prices
 Competitor pricing directly affects market behavior
 Linear Regression performed best on this dataset
 Seasonal trends impact revenue and demand
-Future Improvements
 
+## Future Improvements
 Possible future enhancements:
 
 Real-time pricing engine
@@ -198,21 +203,31 @@ Flask or Streamlit deployment
 Dashboard integration
 Deep Learning models
 Live competitor pricing APIs
-How to Run the Project
+
+## How to Run the Project
+
 Clone Repository
 git clone https://github.com/YOUR_USERNAME/Dynamic_Pricing_Optimization.git
-Create Virtual Environment
+
+## Create Virtual Environment
 python -m venv venv
 
-Activate environment:
+## Activate environment:
 
 Windows
+
 venv\Scripts\activate
-Install Requirements
+
+## Install Requirements
+
 pip install -r requirements.txt
-Run Project
+
+## Run Project
+
 python src/dynamic_pricing.py
-Requirements
+
+## Requirements
+
 pandas
 numpy
 matplotlib
@@ -220,13 +235,16 @@ seaborn
 scikit-learn
 xgboost
 statsmodels
-Applications
+
+## Applications
+
 E-commerce pricing
 Retail analytics
 Revenue optimization
 Demand forecasting
 Smart pricing systems
-Author
+
+## Author
 
 Shrujana
 
