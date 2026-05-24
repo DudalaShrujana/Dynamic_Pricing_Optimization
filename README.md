@@ -1,48 +1,24 @@
 Dynamic Pricing Optimization
 
-An end-to-end Machine Learning + Data Analytics project that analyzes retail sales data, customer demand, competitor pricing, and revenue trends to build an intelligent pricing prediction system.
+A Machine Learning project that analyzes retail pricing, customer demand, competitor pricing, and revenue trends to build an intelligent dynamic pricing system.
 
 Project Overview
 
-This project focuses on dynamic pricing optimization using retail transaction data.
+This project focuses on:
 
-The system:
+Exploratory Data Analysis (EDA)
+Revenue trend analysis
+Demand forecasting
+Competitor price analysis
+Machine Learning price prediction
+Model comparison using regression metrics
 
-Performs Exploratory Data Analysis (EDA)
-Analyzes:
-Revenue trends
-Demand trends
-Competitor price gaps
-Product performance
-Builds Machine Learning models to:
-Predict product prices
-Analyze demand behavior
-Compares multiple ML algorithms using evaluation metrics:
-MAE
-RMSE
-R² Score
+The system helps businesses make data-driven pricing decisions.
 
-The project demonstrates how businesses can use data-driven pricing strategies to maximize revenue and improve decision-making.
-
-Problem Statement
-
-Traditional pricing strategies are static and do not react to:
-
-Market demand
-Competitor prices
-Seasonal trends
-Customer behavior
-
-This project aims to build a system that can:
-
-Analyze retail market conditions
-Predict optimal pricing behavior
-Understand revenue and demand patterns
-Compare different ML models for pricing accuracy
 Technologies Used
 Programming Language
 Python
-Libraries & Frameworks
+Libraries
 Pandas
 NumPy
 Matplotlib
@@ -54,53 +30,66 @@ Tools
 VS Code
 Git
 GitHub
+
 Project Structure
+
 Dynamic_Pricing/
 │
 ├── data/
 │   └── retail_price_data.csv
 │
+├── screenshots/
+│   ├── correlation_heatmap.png
+│   ├── unit_price_distribution.png
+│   ├── total_price_distribution.png
+│   ├── qty_distribution.png
+│   ├── monthly_revenue_trend.png
+│   └── model_comparison.png
+│
 ├── src/
 │   └── dynamic_pricing.py
 │
-├── README.md
 ├── requirements.txt
+├── README.md
 ├── .gitignore
 │
 └── venv/
-Dataset Information
+ 
+ Dataset Information
 
-The dataset contains around:
+Dataset contains:
 
 50,000 rows
 30 columns
 
-Important features include:
+Important features:
 
-Feature	Description
-unit_price	Product selling price
-qty	Quantity sold
-total_price	Total transaction amount
-comp_1, comp_2, comp_3	Competitor prices
-customers	Number of customers
-holiday	Holiday indicator
-weekend	Weekend indicator
-revenue	Generated revenue
-lag_price	Previous pricing values
+| Feature     | Description             |
+| ----------- | ----------------------- |
+| unit_price  | Product selling price   |
+| qty         | Quantity sold           |
+| total_price | Total transaction value |
+| comp_1      | Competitor 1 price      |
+| comp_2      | Competitor 2 price      |
+| comp_3      | Competitor 3 price      |
+| revenue     | Revenue generated       |
+| customers   | Customer count          |
+| holiday     | Holiday indicator       |
+
 Workflow
 1. Data Loading
 
-The CSV dataset is loaded using Pandas.
+Dataset is loaded using Pandas.
 
 df = pd.read_csv("data/retail_price_data.csv")
 2. Data Cleaning
 
 Performed operations:
 
-Checked dataset shape
-Removed duplicate rows
-Converted date columns
-Handled missing values
+Duplicate removal
+Date conversion
+Missing value handling
+Feature engineering
 
 Output:
 
@@ -108,65 +97,45 @@ Shape : (50000, 30)
 Duplicate rows: 0
 Exploratory Data Analysis (EDA)
 
-EDA helps understand data patterns before building ML models.
+EDA helps understand pricing behavior, demand patterns, and relationships between variables.
 
 Distribution of Unit Price
-
-Shows how product prices are distributed.
-
-Most products lie in the low-to-medium price range
+Most products are in low-to-medium price ranges
 Few expensive products create a long-tail distribution
 
 Distribution of Total Price
-
-Analyzes transaction value distribution.
-
-Observations:
-
-Most purchases are lower-value transactions
-Few high-value purchases generate large revenue
+Most transactions are low-value purchases
+Few transactions contribute very high revenue
 
 Distribution of Quantity Sold
-
-Shows demand behavior.
-
-Observations:
-
-Smaller quantities are sold more frequently
-High quantities occur less often
+Small quantities are sold more frequently
+High quantity purchases are less common
 
 Monthly Revenue Trend
-
-Tracks how revenue changes over time.
-
-Insights:
-
-Revenue fluctuates monthly
-Some seasonal spikes are visible
+Revenue changes month-to-month
+Seasonal fluctuations are visible
 
 Correlation Heatmap
 
-Displays relationships between numerical variables.
+Shows relationships between numerical features.
 
-Insights:
+Key insights:
 
-Strong positive relationships between:
-quantity
-revenue
-lag prices
-Competitor prices influence product pricing
+Revenue strongly correlates with quantity
+Competitor prices affect product pricing
+Lag prices influence future pricing
 
 Machine Learning Models Used
 
 The project compares multiple regression algorithms.
 
-Model	Purpose
-Linear Regression	Baseline prediction model
-Ridge Regression	Handles multicollinearity
-Random Forest	Ensemble learning model
-XGBoost	Advanced boosting algorithm
-Evaluation Metrics
-MAE (Mean Absolute Error)
+| Model             | Purpose                     |
+| ----------------- | --------------------------- |
+| Linear Regression | Baseline prediction model   |
+| Ridge Regression  | Reduces overfitting         |
+| Random Forest     | Ensemble learning           |
+| XGBoost           | Advanced boosting algorithm |
+|_________________________________________________|
 
 Measures average prediction error.
 
@@ -197,70 +166,66 @@ Range:
 
 Higher R² = Better model
 
-Model Comparison Results
-Model	MAE	RMSE	R²
-Linear Regression	Very Low	Very Low	1.000
-Ridge Regression	Low	Low	1.000
-Random Forest	Moderate	Moderate	0.999
-XGBoost	Moderate	Moderate	0.999
+Model Comparison Output
+Model comparison (Price prediction):
+
+Model                  MAE         RMSE        R2
+Linear Regression      0.0000      0.0000      1.0000
+Ridge Regression       0.0043      0.0065      1.0000
+Random Forest          0.2714      0.7287      0.9998
+XGBoost                0.7258      1.0825      0.9996
 
 Best model selected:
 
 Best price model: Linear Regression
 Key Insights
-Revenue strongly depends on:
-Quantity sold
+Revenue depends strongly on:
 Product pricing
-Competitor pricing
-Competitor prices significantly influence market pricing
-Linear Regression performed exceptionally well on this dataset
-Demand and revenue show seasonal variations
+Quantity sold
+Competitor prices
+Competitor pricing directly affects market behavior
+Linear Regression performed best on this dataset
+Seasonal trends impact revenue and demand
 Future Improvements
 
-Possible enhancements:
+Possible future enhancements:
 
-Deploy using Flask or Streamlit
-Add real-time pricing recommendations
-Use Deep Learning models
-Integrate live competitor pricing APIs
-Build interactive dashboards
+Real-time pricing engine
+Flask or Streamlit deployment
+Dashboard integration
+Deep Learning models
+Live competitor pricing APIs
 How to Run the Project
 Clone Repository
 git clone https://github.com/YOUR_USERNAME/Dynamic_Pricing_Optimization.git
 Create Virtual Environment
 python -m venv venv
 
-Activate:
+Activate environment:
 
 Windows
 venv\Scripts\activate
-Install Dependencies
+Install Requirements
 pip install -r requirements.txt
 Run Project
 python src/dynamic_pricing.py
-Sample Output
-Shape : (50000, 30)
-Duplicate rows: 0
-
---- EDA ---
-Share of rows in top 1% revenue: 0.010
-
---- ML: Price Prediction (target = unit_price) ---
-
-Best price model: Linear Regression
+Requirements
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+statsmodels
 Applications
-
-This project can be used in:
-
-E-commerce platforms
-Retail businesses
-Inventory optimization
+E-commerce pricing
+Retail analytics
+Revenue optimization
+Demand forecasting
 Smart pricing systems
-Revenue forecasting
 Author
 
 Shrujana
 
-Machine Learning & Data Analytics Project
-
-GitHub: https://github.com/DudalaShrujana
+GitHub:
+https://github.com/DudalaShrujana
